@@ -30,3 +30,13 @@ $RECYCLE.BIN/
 .vscode/
 .history/
 *.code-workspace
+
+
+.bashrc
+.gitconfig
+.vimrc
+.virtualenvs/
+.local/
+.cache/
+.ipython/
+alhanfurkan.pythonanywhere.com/
