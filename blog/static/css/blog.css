@@ -1,0 +1,20 @@
+.hr {
+    height: 4px;
+    width: 60px;
+    background-color: #36454F;
+    margin: 20px auto 20px auto;
+}
+
+footer {
+    border-top: 2px solid #313131;
+    background-color: #2b2b2b;
+}
+
+body {
+    background-color: #3b3b3b;
+}
+
+nav {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
