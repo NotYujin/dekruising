@@ -1,0 +1,31 @@
+<h1 id="nieuws" class="display-4 fw-semibold text-center" data-aos="fade-down">Nieuws</h1>
+<hr class="hr" data-aos="fade-down">
+<div id="carouselExampleCaptions" class="carousel slide container" data-aos="fade-down">
+    <div class="carousel-indicators">
+        {% for post in posts %}
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ forloop.counter0 }}" 
+                class="{% if forloop.first %}active{% endif %}" 
+                {% if forloop.first %}aria-current="true"{% endif %} 
+                aria-label="Slide {{ forloop.counter }}"></button>
+        {% endfor %}
+    </div>
+    <div data-aos="fade-down" class="carousel-inner border rounded-5 shadow-lg">
+        {% for post in posts %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <img src="{{ post.image.url }}" class="d-block w-100" alt="{{ post.title }}">
+            <div class="carousel-caption d-md-block bg-dark bg-opacity-50 rounded-5">
+                <h5>{{ post.title }}</h5>
+                <p>{{ post.text }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
