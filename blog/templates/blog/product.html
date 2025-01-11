@@ -1,0 +1,35 @@
+<div id="producten" class="background-product py-5">
+    <h1 class="display-4 fw-semibold text-center" data-aos="fade-down">Onze producten</h1>
+    <hr class="hr" data-aos="fade-down">
+    <div class="min-vh-100 d-flex flex-column container product-list">
+        {% for product in products %}
+            {% if forloop.counter|divisibleby:2 %}
+                <div class="row align-items-center my-5 rounded-5">
+                    <div class="col-12 col-md-6 order-md-2 text-end">
+                        {% if product.image %}
+                            <img src="{{ product.image.url }}" alt="{{ product.title }}" data-aos="fade-left" class="img-fluid object-fit-cover rounded-5 shadow">
+                        {% endif %}
+                    </div>
+                    <div class="col-12 col-md-6 order-md-1">
+                        <h1 class="text-center w-100" data-aos="fade-left">{{ product.title }}</h1>
+                        <hr class="hr mt-0 mb-5 bg-danger-subtle" data-aos="fade-left">
+                        <p class="text-center mx-5" data-aos="fade-left">{{ product.description }}</p>
+                    </div>
+                </div>
+            {% else %}
+                <div class="row align-items-center my-5 rounded-5">
+                    <div class="col-12 col-md-6 order-md-1">
+                        {% if product.image %}
+                            <img src="{{ product.image.url }}" alt="{{ product.title }}" data-aos="fade-right" class=" shadow img-fluid object-fit-cover rounded-5 product-img">
+                        {% endif %}
+                    </div>
+                    <div class="col-12 col-md-6 order-md-2">
+                        <h1 class="text-center w-100" data-aos="fade-right">{{ product.title }}</h1>
+                        <hr class="hr mt-0 mb-5 bg-danger-subtle" data-aos="fade-right">
+                        <p class="text-center mx-5" data-aos="fade-right">{{ product.description }}</p>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

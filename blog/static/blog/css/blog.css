@@ -1,0 +1,183 @@
+body, html {
+    overflow-x: hidden;
+}
+
+.hr {
+    height: 4px;
+    width: 60px;
+    background-color: #36454F;
+    margin: 20px auto 20px auto;
+    border: none;
+}
+
+nav {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.navbar-brand{
+    position: absolute;
+    left: 1rem; /* Adjust based on your design */
+    top: 0.5rem;
+}
+
+.active{
+    font-weight: bold;
+    color: #6c757d;
+}
+
+.hero-section h1,
+.navbar-brand{
+    font-family: "Knewave", cursive;
+}
+
+.hero-background{
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-section{
+    /* background-image: url('../../../media/carousel_img/hero.jpg');
+    background-size: cover;
+    background-position: center; */
+    text-shadow: black 3px 0 10px;
+}
+
+/* _________________CAROUSEL__________________ */
+
+.background-carousel{
+    background-color: #e2e2e2;
+}
+
+.carousel-inner .carousel-item img{
+    aspect-ratio: 16 / 9; /* Adjust to your desired ratio */
+    object-fit: cover; /* Ensures images fill the available space */
+    height: auto; /* Adjusts height automatically */
+}
+
+
+/* _________________PRODUCTSLIST_________________ */
+
+.background-product{
+    background-color: #c2c7c2;
+}
+
+.product-list img {
+    max-width: 100%; /* Ensures images don’t overflow the container */
+    height: 300px; /* Maintains the aspect ratio */
+}
+
+.product-list .row {
+    margin: 0;  /* Remove margins between rows */
+}
+
+.product-list .col-12 {
+    padding: 0;  /* Remove padding from columns */
+}
+.product-list .order-md-1, .product-list .order-md-2 {
+    padding: 0;  /* Remove any padding from the column itself */
+}
+
+
+/* Specific styling for small screens (phones) */
+@media (max-width: 768px) {
+    .d-flex.flex-row {
+        flex-direction: column; /* Stacks the content vertically */
+    }
+    .object-fit-cover {
+        width: 100%; /* Ensures image takes full width of its container */
+        height: auto; /* Maintains the aspect ratio */
+    }
+    .product-list img {
+        max-height: 200px;
+    }
+}
+
+/* -----------------CONTACTFORM----------------- */
+
+.background-contact{
+    background-color: #a5aca5;
+}
+
+/* General floating label styles */
+.floating-label {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+/* General floating label styles */
+.floating-label {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.floating-label input,
+.floating-label textarea {
+    width: 100%;
+    padding: 1.25rem 0.75rem 0.25rem; /* Top padding adjusted for label positioning */
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    outline: none;
+    background: none;
+}
+
+.floating-label label {
+    position: absolute;
+    top: 0.75rem;  /* Adjusted so label starts at the top */
+    left: 0.75rem; /* Positioned at the same spot where input text starts */
+    font-size: 1rem;
+    color: #6c757d;
+    transition: 0.2s ease all;
+    pointer-events: none; /* Prevent the label from being clicked */
+}
+
+.floating-label input:focus + label,
+.floating-label input:not(:placeholder-shown) + label,
+.floating-label textarea:focus + label,
+.floating-label textarea:not(:placeholder-shown) + label {
+    top: 0.3rem; /* Position label closer to the border when floating */
+    left: 0.75rem;
+    font-size: 0.75rem;
+    color: rgb(153, 153, 153); /* Light grey color */
+}
+
+.floating-label input:focus,
+.floating-label textarea:focus {
+    border-color: #80bdff;
+    box-shadow: none;
+}
+@media (max-width: 768px) {
+    .hero-section{
+        height: 50vh !important;
+    }
+
+    .carousel-caption{
+        padding: 0;
+        right: 0;
+        left: 0;
+        margin-bottom: 2px;
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+    }
+    .carousel-caption h5 {
+        font-size: 1rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.75rem;
+    }
+    .carousel-indicators{
+        background-color: rgba(35, 35, 35, 0.5);
+        margin: 0;
+        right: 14px;
+        left: 14px;     
+        border-radius: 0 0 25px 25px;  
+    }
+}
+
+/* ______________FOOTER______________ */
+
+.background-footer{
+    background-color: #3f463f;
+}

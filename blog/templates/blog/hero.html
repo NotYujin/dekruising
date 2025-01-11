@@ -1,12 +1,24 @@
-{% load static %}
-<div class="hero-section px-4 py-5 my-5 d-flex justify-content-center align-items-center text-white min-vh-100 " style="background-color: #000;">
-    <div class="">
-        <h1 class="display-3 text-center text-dark">
-            <small><span class="de d-block">DE</span></small>
-            <span class="kruising d-block">KRUISING</span>
-        </h1>
-        <div class="col-lg-6 mx-auto">
-            <p class="mb-4">some bullshit text where I don't know what to write. While I'm writing this, I'm very tired, and want to sleep. But I have some of what the urge to finish this website!</p>
+<div class="hero-section mt-5 d-flex justify-content-center align-items-center text-white vh-100">
+    {% if hero_main %}
+        <div class="text-center position-absolute">
+            <h1 class="display-3 text-light text-center">{{ hero_main.title }}</h1>
+            <div class="col-lg-6 mx-auto text-center">
+                <p class="mb-4">{{ hero_main.description }}</p>
+            </div>
         </div>
-    </div>
+        {% if hero_main.video %}
+            <!-- Display video if available -->
+            <div class="w-100 h-100">
+                <video class="object-fit-cover w-100 h-100" autoplay loop muted>
+                    <source src="{{ hero_main.video.url }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        {% elif hero_main.image %}
+            <!-- Display image if video is not available -->
+            <div class=" w-100 h-100 ">
+                <img src="{{ hero_main.image.url }}" alt="{{ hero_main.title }}" class="img-fluid w-100 h-100 object-fit-cover">
+            </div>
+        {% endif %}
+    {% endif %}
 </div>
