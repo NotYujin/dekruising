@@ -33,3 +33,19 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
+    
+class ClientMessage(models.Model):
+    name = models.CharField(max_length=100, verbose_name="Name")
+    email = models.EmailField(verbose_name="Email")
+    company = models.CharField(max_length=100, blank=True, null=True, verbose_name="Company")
+    phone_number = models.CharField(max_length=15, verbose_name="Phone Number")
+    message = models.TextField(verbose_name="Message")
+    sent_at = models.DateTimeField(auto_now_add=True, verbose_name="Sent At")
+
+    def __str__(self):
+        return f"Message from {self.name} ({self.email})"
+
+    class Meta:
+        verbose_name = "Client Message"
+        verbose_name_plural = "Client Messages"
+        ordering = ['-sent_at']
